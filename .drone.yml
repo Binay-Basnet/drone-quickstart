@@ -12,6 +12,10 @@ steps:
   image: nginx
   commands:
   - echo hello this is it 
+  - ls 
+  - echo 
+  - echo $HOSTNAME
+  - ip a
   - docker run -d -p 8081:80 nginx
  
 trigger:
