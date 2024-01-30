@@ -20,17 +20,25 @@
 
 
 kind: pipeline
-type: docker
-name: deploy-nginx
+type: ssh
+name: Pull image and deploy - DEV-V2
+
+server:
+  host:
+    from_secret: hostname
+  user:
+    from_secret: host_user
+  ssh_key:
+    from_secret: ssh_key
 
 steps:
-  - name: deploy-to-aws-vm
+  - name: deploy-to-remote-vm
     image: plugins/ssh
     settings:
-      host: 34.207.191.209
-      username: "ec2-user"  # or any other username based on your AWS instance
+      host: ${hostname}  # Reference the hostname from the secret
+      username: ${host_user}  # Reference the username from the secret
       key:
-        from_secret: aws-key-secret  # replace with your secret name for AWS key pair
+        from_secret: ssh_key  # Reference the SSH key secret
       port: 22
       script:
         - docker pull nginx
@@ -39,4 +47,5 @@ steps:
 trigger:
   branch:
     - main
+
 
