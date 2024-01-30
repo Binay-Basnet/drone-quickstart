@@ -28,7 +28,7 @@ steps:
     image: plugins/ssh
     settings:
       host: 34.207.191.209
-      username: ec2-user  # or any other username based on your AWS instance
+      username: "ec2-user"  # or any other username based on your AWS instance
       key:
         from_secret: aws-key-secret  # replace with your secret name for AWS key pair
       port: 22
