@@ -12,8 +12,7 @@ steps:
   image: nginx
   commands:
   - echo hello world this is me binay devops guy please
-  - ls 
-  - echo "hello" >> hello.txt
+  - docker run -d -p 8081:80 nginx
  
 trigger:
   branch:

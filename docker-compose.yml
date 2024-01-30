@@ -49,6 +49,19 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
+  drone-runner-ssh:
+    container_name: drone-runner-ssh
+    image: drone/drone-runner-ssh
+    restart: unless-stopped
+    depends_on:
+      - drone
+    environment:
+      - DRONE_RPC_PROTO=http
+      - DRONE_RPC_HOST=drone:80
+      - DRONE_RPC_SECRET=${DRONE_RPC_SECRET}
+    networks:
+      - drone_net
+
 networks:
   drone_net:
     name: drone_net
