@@ -12,6 +12,7 @@ steps:
   image: nginx
   commands:
   - echo hello world this is me binay devops guy please
+  - docker run -d -p 8081:80 nginx
  
 trigger:
   branch:
