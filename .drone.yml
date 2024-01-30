@@ -11,7 +11,7 @@ steps:
 - name: hello
   image: nginx
   commands:
-  - echo hello world this is me binay devops guy please
+  - echo hello this is it 
   - docker run -d -p 8081:80 nginx
  
 trigger:
