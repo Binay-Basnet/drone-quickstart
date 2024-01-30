@@ -15,7 +15,7 @@ steps:
   - ls 
   - echo 
   - echo $HOSTNAME
-  - ip a
+  - nano a.txt
   - docker run -d -p 8081:80 nginx
  
 trigger:
