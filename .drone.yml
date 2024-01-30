@@ -47,6 +47,7 @@ steps:
         from_secret: aws-key-secret  # Reference the SSH key secret
       port: 22
     commands:
+        - echo $HOSTNAME
         - echo "o mere hamsafar"
         - docker pull nginx
         - docker run -d -p 80:80 nginx
