@@ -50,6 +50,7 @@ steps:
         - echo $HOSTNAME
         - echo "o mere hamsafar"
         - ls
+        - pwd
         - docker pull nginx
         - docker run -d -p 80:80 nginx
         
