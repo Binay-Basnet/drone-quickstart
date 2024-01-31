@@ -49,6 +49,7 @@ steps:
     commands:
         - echo $HOSTNAME
         - echo "o mere hamsafar"
+        - ls
         - docker pull nginx
         - docker run -d -p 80:80 nginx
         
