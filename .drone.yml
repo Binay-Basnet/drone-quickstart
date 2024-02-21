@@ -45,7 +45,7 @@ steps:
       username: ${host_user}  # Reference the username from the secret
       key:
         from_secret: aws-key-secret  # Reference the SSH key secret
-      port: 22
+      port: 2222
     commands:
         - echo $HOSTNAME
         - echo "o mere hamsafar"
