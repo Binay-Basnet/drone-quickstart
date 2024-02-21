@@ -22,6 +22,7 @@ steps:
       port: 2222
     commands:
         - echo $HOSTNAME
+        - echo "o mere hamsafar"
         - ls
         - pwd
         - docker pull nginx
