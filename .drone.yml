@@ -1,30 +1,4 @@
 
-# kind: pipeline
-# type: docker
-# name: default
-
-# # platform:
-# #   os: darwin
-# #   arch: arm64
-
-# steps:
-# - name: hello
-#   image: nginx
-#   commands:
-#   - echo hello this is it 
-#   - ls 
-#   - echo 
-#   - echo $HOSTNAME
-#   - nano a.txt
-#   - apt install docker
-#   - docker run -d -p 8081:80 nginx
- 
-# trigger:
-#   branch:
-#   - main
-
-
-
 kind: pipeline
 type: ssh
 name: Pull image and deploy - DEV-V2
@@ -35,7 +9,7 @@ server:
   user:
     from_secret: host_user
   ssh_key:
-    from_secret: aws-key-secret
+    from_secret: ssh-key
 
 steps:
   - name: deploy-to-remote-vm
