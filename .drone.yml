@@ -13,14 +13,14 @@ server:
   port: 2222
 
 steps:
-  - name: deploy-to-remote-vm
-    image: plugins/ssh
-    settings:
-      host: ${hostname}  # Reference the hostname from the secret
-      username: ${host_user}  # Reference the username from the secret
-      key:
-        from_secret: ssh-key  # Reference the SSH key secret
-      port: 2222
+  # - name: deploy-to-remote-vm
+  #   image: plugins/ssh
+  #   settings:
+  #     host: ${hostname}  # Reference the hostname from the secret
+  #     username: ${host_user}  # Reference the username from the secret
+  #     key:
+  #       from_secret: ssh-key  # Reference the SSH key secret
+  #     port: 2222
     commands:
         - echo $HOSTNAME
         - echo "o mere hamsafar"
