@@ -25,6 +25,7 @@ steps:
         - echo $HOSTNAME
         - echo "o mere hamsafar"
         - pwd
+        - ls
         - docker pull nginx
         - docker run -d -p 80:80 nginx
         
