@@ -13,7 +13,7 @@ server:
   port: 2222
 
 steps:
-  # - name: deploy-to-remote-vm
+  - name: deploy-to-remote-vm
   #   image: plugins/ssh
   #   settings:
   #     host: ${hostname}  # Reference the hostname from the secret
