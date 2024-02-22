@@ -10,6 +10,7 @@ server:
     from_secret: host_user
   ssh_key:
     from_secret: ssh-key
+  port: 2222
 
 steps:
   - name: deploy-to-remote-vm
