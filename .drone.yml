@@ -4,12 +4,13 @@ type: ssh
 name: Pull image and deploy - DEV-V2
 
 server:
-  host: 103.191.130.8:2222
+  host:   
+    from_secret: hostname
   user:
     from_secret: host_user
   ssh_key:
     from_secret: ssh-key
-  # port: 2222
+  port: 2222
 
 steps:
   - name: deploy-to-remote-vm
@@ -26,7 +27,7 @@ steps:
         - pwd
         # - ls
         - docker pull nginx
-        - docker run -d -p 8080:80 nginx
+        - docker run -d -p 80:80 nginx
         
 
 trigger:
