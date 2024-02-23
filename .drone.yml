@@ -4,13 +4,14 @@ type: ssh
 name: Pull image and deploy - DEV-V2
 
 server:
-  host: 
-    from_secret: {hostname}:2222
+  host: 103.191.130.8
+    # from_secret: hostname
   user:
     from_secret: host_user
+  port: 2222
   ssh_key:
     from_secret: ssh-key
-  port: 2222
+  
 
 steps:
   - name: deploy-to-remote-vm
