@@ -4,8 +4,8 @@ type: ssh
 name: Pull image and deploy - DEV-V2
 
 server:
-  host: 103.191.130.8
-    # from_secret: hostname
+  host: 
+    from_secret: hostname
   user:
     from_secret: host_user
   # port: 2222
@@ -15,13 +15,13 @@ server:
 
 steps:
   - name: deploy-to-remote-vm
-    image: plugins/ssh
-    settings:
-      host: ${hostname}  # Reference the hostname from the secret
-      username: ${host_user}  # Reference the username from the secret
-      key:
-        from_secret: ssh-key  # Reference the SSH key secret
-      port: 2222
+    # image: plugins/ssh
+    # settings:
+    #   host: ${hostname}  # Reference the hostname from the secret
+    #   username: ${host_user}  # Reference the username from the secret
+    #   key:
+    #     from_secret: ssh-key  # Reference the SSH key secret
+    #   port: 2222
     commands:
         - echo $HOSTNAME
         - echo "o mere hamsafar"
