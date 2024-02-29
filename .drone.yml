@@ -15,5 +15,5 @@ steps:
 trigger:
   branch:
     - cicd
-  event:
-    -  push
+  # event:
+  #   -  push
