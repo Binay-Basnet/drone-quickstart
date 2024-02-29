@@ -1,38 +1,19 @@
-
 kind: pipeline
-type: ssh
-name: Pull image and deploy - DEV-V2
+type: docker
+name: default
 
-server:
-  host: 
-    from_secret: hostname
-  user:
-    from_secret: host_user
-  # port: 2222
-  ssh_key:
-    from_secret: ssh-key
-  
+# platform:
+#   os: darwin
+#   arch: arm64
 
 steps:
-  - name: deploy-to-remote-vm
-    # image: plugins/ssh
-    # settings:
-    #   host: ${hostname}  # Reference the hostname from the secret
-    #   username: ${host_user}  # Reference the username from the secret
-    #   key:
-    #     from_secret: ssh-key  # Reference the SSH key secret
-    #   port: 2222
-    commands:
-        - echo $HOSTNAME
-        - echo "o mere hamsafar"
-        - pwd
-        # - ls
-        - docker pull nginx
-        - docker run -d -p 80:80 nginx
-        
-
+- name: hello
+  image: nginx
+  commands:
+  - echo hello world this is me binay devops guy please
+ 
 trigger:
   branch:
-    - main
-
-
+    - cicd
+  event:
+    -  push
